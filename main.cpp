@@ -9,7 +9,7 @@ int main( )
     real_t A[2*1] = { 1.0, 1.0 };
     real_t g[2] = { 1.0, 1.0 };
     real_t lb[2] = { 0.0, 0.0 };
-    real_t ub[2] = { 10000.0, 10000.0 };
+    //real_t ub[2] = { 10000.0, 10000.0 };
     real_t lbA[1] = { 1.0 }; // lbAとubAを等しくすることで等式制約として設定可能
     real_t ubA[1] = { 1.0 };
 
@@ -21,7 +21,8 @@ int main( )
 
     /* Solve first QP. */
     int_t nWSR = 10;
-    example.init( H,g,A,lb,ub,lbA,ubA, nWSR );
+    //example.init( H,g,A,lb,ub,lbA,ubA, nWSR );
+    example.init( H,g,A,lb,NULL,lbA,ubA, nWSR );
 
     /* Get and print solution of first QP. */
     real_t xOpt[2];
